@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pagos.css' %}">
+    <title>Pagos</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="{% url 'carrito' %}" class="btn-1">VOLVER</a>
+    </div>
+
+    <div class="content">
+        <h1>Resumen de Pago</h1>
+        <p>Hola, {{ user.username }}!</p>
+        <h2>Tu monto total a Pagar es de: {{ total }}</h2>
+        <form action="{% url 'pagos' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="total" value="{{ total }}">
+            <button type="submit" class="btn-1">Pagar</button>
+        </form>
+    </div>
+</body>
+</html>

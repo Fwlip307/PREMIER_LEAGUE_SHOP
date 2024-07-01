@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/pl_fondo_vip.png') no-repeat center center fixed;
+    background-size: cover;
+}
+*{
+    color: white;
+}
+
+.action-buttons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-button {
+    padding: 10px;
+    background-color: rgb(61, 24, 93);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #3a1758;
+}
+
+.login-container {
+    background-color: rgba(150, 60, 255, 0.9); /* Opacidad añadida para destacar el formulario */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button[type="button"].forgot-password,
+button[type="button"].register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(61, 24, 93);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"].forgot-password:hover,
+button[type="button"].register-button:hover {
+    background-color: #3a1758;
+}
+
+/* Estilos para el botón de "Olvidé mi contraseña" */
+.forgot-password {
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forgot-password:hover {
+    color: #ccc;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .action-buttons {
+        position: static;
+    }
+
+    .back-button {
+        width: 100%;
+    }
+
+    .login-container {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+    }
+
+    button[type="submit"],
+    button[type="button"].forgot-password,
+    button[type="button"].register-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

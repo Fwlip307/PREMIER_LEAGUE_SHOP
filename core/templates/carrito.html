@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link rel="stylesheet" href="{% static 'carrito.css' %}">
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <a href="javascript:void(0);" class="btn-1" onclick="openNav()">&#9776; <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo"></a>
+        <div class="dropdown">
+            <a href="javascript:void(0);" class="boton_2">PRODUCTOS</a>
+            <div class="dropdown-content">
+                <a href="{% url 'camiseta' %}">Camisetas</a>
+                <a href="{% url 'accesorio' %}">Accesorios</a>
+                <a href="{% url 'zapatos' %}">Zapatos</a>
+            </div>
+        </div>
+
+        <!-- Menu desplegable Entradas -->
+        <div class="dropdown">
+            <a href="javascript:void(0);" class="boton_2">ENTRADAS</a>
+            <div class="dropdown-content">
+                <a href="{% url 'ticket' %}">Entradas Partidos</a>
+                <a href="{% url 'tour' %}">Tours</a>
+            </div>
+        </div>
+        <div class="user-section">
+            <div class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-icon"><img src="{% static 'img/user_icon50px.png' %}" alt="Usuario" class="icono"></a>
+                <div class="dropdown-content">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="btn-1" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                        <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn-1">Iniciar sesión</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="welcome-message">Bienvenido, {{ user.username }}</div>
+            {% endif %}
+        </div>
+               
+        <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="Carrito" class="icono">({{ request.carrito_count }}) </a>
+    </div>
+
+    <!-- Barra lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home' %}">PREMIER LEAGUE SHOP</a>
+        <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
+        <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
+        <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+        <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
+        <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}" class="boton_1">CARRITO({{ request.carrito_count }})</a>
+        <div class="user-section">
+            <div class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-icon"><img src="{% static 'img/user_icon50px.png' %}" alt=""></a>
+                <div class="dropdown-content">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="btn-1" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                        <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn-1">Iniciar sesión</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="welcome-message">Bienvenido, {{ user.username }}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <h1>CARRITO</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in carrito %}
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nombre }}</td>
+                <td><img src="{{ item.imagen }}" alt="{{ item.nombre }} "></td>
+                <td>{{ item.precio }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.subtotal }}</td>
+                <td><a href="{% url 'delToCar' item.codigo %}" class="boton_2">ELIMINAR</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if user.is_authenticated %}
+    <h2>Total: {{ total }}</h2>
+    <form action="{% url 'pagos' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="total" value="{{ total }}">
+        <button type="submit" class="boton_2">Pagar</button>
+    </form>
+    {% else %}
+    <h2>Total: {{ total }}</h2>
+    <a href="{% url 'login' %}" class="boton_1">Iniciar sesión para pagar</a>
+    {% endif %}
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+</body>
+</html>

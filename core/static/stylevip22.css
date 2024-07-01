@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+h1{
+    color: white;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/pl_fondo_vip.png);
+    background-position: center bottom ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: white;
+    display: block;
+    font-weight: 600;
+}
+.menu .navbar ul li a:hover{
+    color: blueviolet;
+
+}
+.menu{
+    display: none;
+}
+.menu-icono{
+    width: 25px;
+}
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+.header-content{
+    text-align: center;
+}
+
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+.header-content p{
+    font-size: 16px;
+    color: white;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+.btn-1{
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: rgb(0, 0, 0);
+    color: yellow;
+    text-transform: uppercase;
+}
+.btn-1:hover{
+    background-color: rgb(183, 130, 19);
+}
+.viip{
+    padding: 100px;
+    background-color: rgb(172, 124, 7);
+    position: relative;
+}
+.viip-content{
+    text-align: center;
+}
+.viip-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: rgb(242, 245, 245);
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+.txt-p{
+    font-size: 16px;
+    color: rgb(251, 251, 251);
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+.viip-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.viip-1{
+    padding: 25px;
+}
+.viip-1 img{
+    width: 200px;
+}
+.viip-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.viip-1 h3{
+    color: rgb(249, 246, 246);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.services{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7),
+        url(img/wembley4k.png));
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0;
+}
+.services-content{
+    text-align: center;
+}
+.services-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.services-content p{
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+.services-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.services-1{
+    padding: 0 100px;
+}
+.services-1 img{
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.services-1 h3{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+
+}
+
+.general{
+    display: flex;
+}
+.general-1{
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: rgb(0, 0, 0);
+}
+.general-2{
+    background-image: url(img/tour_oldtraford.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.general-3{
+    background-image: url(img/emirates.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+.general-4{
+    background-image: url(img/brightonstadium.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+h4{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 55px;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+p{
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin: 25px 0 45px 0;
+}
+.blog p{
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin: 25px 0 45px 0;
+}
+
+.blog{
+    padding: 100px 0;
+    text-align: center;
+    color: black;
+    background-color: rgb(172, 124, 7);;
+}
+.blog-1{
+    padding: 15px 35px;
+}
+.blog-1 img{
+    width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.blog-1 h3{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+.fooster{
+    padding: 100px 0;
+    background-color: black;
+
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+link h3{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+}
+.link a{
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    display: block;
+    margin-bottom: 15px;
+}
+
+@media (max-width:850px) {
+
+    .general>div {
+        height: 35vh;
+        padding: 0px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .btn-1 {
+        font-size: 2vw;
+    }
+
+    .general>div>h2 {
+        font-size: 3vw;
+        line-height: 1rem;
+    }
+    .viip-content h2 {
+        font-size: 38px;
+        line-height: 70px;
+        color: rgb(242, 245, 245);
+        text-transform: uppercase;
+        padding: 0;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+    .txt-p {
+        padding: 0 20px;
+    }
+    .viip-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services-group{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    #logo img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
